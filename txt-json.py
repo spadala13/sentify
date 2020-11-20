@@ -11,6 +11,6 @@ with open(filename) as fh:
         
         lstofwords.append(word)
 
-out_file = open("pos-words.json", "w")
+out_file = open("negative-words.json", "w")
 json.dump(lstofwords, out_file, sort_keys=False)
 out_file.close
