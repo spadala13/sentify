@@ -41,14 +41,14 @@ def get_all_words(cleaned_tokens_list):
         for token in tokens:
             yield token
 
-def get_tweets_for_model(cleaned_tokens_list):
+def get_words_for_model(cleaned_tokens_list):
     for sentence_tokens in cleaned_tokens_list:
         yield dict([token, True] for token in sentence_tokens)
 
 if __name__ == "__main__":
 
-    positive_tweets = twitter_samples.strings('positive_tweets.json')
-    negative_tweets = twitter_samples.strings('negative_tweets.json')
+    positive_words = twitter_samples.strings('positive_tweets.json')
+    negative_words = twitter_samples.strings('negative_tweets.json')
     text = twitter_samples.strings('tweets.20150430-223406.json')
     sentence_tokens = twitter_samples.tokenized('positive_tweets.json')[0]
     stop_words = stopwords.words('english')
@@ -70,8 +70,8 @@ if __name__ == "__main__":
     freq_dist_pos = FreqDist(all_pos_words)
     print(freq_dist_pos.most_common(10))
 
-    positive_tokens_for_model = get_tweets_for_model(positive_cleaned_tokens_list)
-    negative_tokens_for_model = get_tweets_for_model(negative_cleaned_tokens_list)
+    positive_tokens_for_model = get_words_for_model(positive_cleaned_tokens_list)
+    negative_tokens_for_model = get_words_for_model(negative_cleaned_tokens_list)
 
     positive_dataset = [(tweet_dict, "Positive")
                          for tweet_dict in positive_tokens_for_model]
