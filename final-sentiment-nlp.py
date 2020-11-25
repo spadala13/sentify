@@ -52,14 +52,14 @@ def get_words_for_model(cleaned_tokens_list):
 
 if __name__ == "__main__":
 
-    positive_words = twitter_samples.strings('positive_tweets.json')
-    negative_words = twitter_samples.strings('negative_tweets.json')
+    positive_words = twitter_samples.strings('positive-words-final.json')
+    negative_words = twitter_samples.strings('negative-words-final.json')
     text = twitter_samples.strings('tweets.20150430-223406.json')
-    sentence_tokens = twitter_samples.tokenized('positive_tweets.json')[0]
+    sentence_tokens = twitter_samples.tokenized('positive-words-final.json')[0]
     stop_words = stopwords.words('english')
 
-    positive_sentence_tokens = twitter_samples.tokenized('positive_tweets.json')
-    negative_sentence_tokens = twitter_samples.tokenized('negative_tweets.json')
+    positive_sentence_tokens = twitter_samples.tokenized('positive-words-final.json')
+    negative_sentence_tokens = twitter_samples.tokenized('negative-words-final.json')
     # print(positive_sentence_tokens)
     positive_cleaned_tokens_list = []
     negative_cleaned_tokens_list = []
